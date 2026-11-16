@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>KB Sync: connecting Zendesk…</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <h1 id="title">Connecting Zendesk…</h1>
+  <p id="msg">One moment, returning you to KB Sync.</p>
+</main>
+<script>
+// OAuth redirect relay for KB Sync.
+// Zendesk's global OAuth client needs one fixed redirect URL, but every Confluence site that
+// installs KB Sync has its own callback (a Forge web trigger). The settings page puts that
+// callback in `state`; this page forwards Zendesk's ?code=…&state=… to it. The callback checks a
+// one-time nonce and exchanges the code (the client secret never leaves Forge).
+// Only KB Sync's own Forge web trigger host is accepted, so this can't be used as an open redirect.
+(function () {
+  var APP_HOST = "c8c8edb0-10b9-40dc-81de-eb301a9d4800.hello.atlassian-dev.net";
+  var q = new URLSearchParams(location.search);
+  var cb = null;
+  try {
+    var b = (q.get("state") || "").replace(/-/g, "+").replace(/_/g, "/");
+    while (b.length % 4) b += "=";
+    cb = JSON.parse(atob(b)).cb;
+  } catch (e) {}
+  var ok = false;
+  try { var u = new URL(cb); ok = u.protocol === "https:" && u.host === APP_HOST && /^\/x1\/[A-Za-z0-9_\-\/]+$/.test(u.pathname) && !u.search; } catch (e) {}
+  if (ok) { location.replace(cb + "?" + q.toString()); return; }
+  document.getElementById("title").textContent = "This link doesn't work";
+  document.getElementById("msg").textContent = q.get("error_description") || q.get("error") ||
+    "Start connecting again from KB Sync's settings page in Confluence (Settings > KB Sync for Zendesk).";
+})();
+</script>
+</body>
+</html>
