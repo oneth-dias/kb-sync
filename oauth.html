@@ -34,7 +34,7 @@
   if (ok) { location.replace(cb + "?" + q.toString()); return; }
   document.getElementById("title").textContent = "This link doesn't work";
   document.getElementById("msg").textContent = q.get("error_description") || q.get("error") ||
-    "Start connecting again from KB Sync's settings page in Confluence (Settings > KB Sync for Zendesk).";
+    "Start connecting again from KB Sync's settings page (admin.atlassian.com > Apps > Sites > your site > Connected apps > KB Sync > ⋯ > Configure).";
 })();
 </script>
 </body>
