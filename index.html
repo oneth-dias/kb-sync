@@ -29,9 +29,10 @@
   <h2 id="how">How syncing works</h2>
   <ul>
     <li><strong>What's synced:</strong> the page or folder you choose, and every published page under it. Each page becomes one Zendesk article.</li>
-    <li><strong>When:</strong> when a page is published, edited, moved, deleted or restored. KB Sync also checks everything once an hour, which catches anything an event missed.</li>
+    <li><strong>When:</strong> within seconds when a page is published, edited or moved. Deleted pages are picked up by the hourly check, because Confluence doesn't notify apps about deletions.</li>
     <li><strong>One direction:</strong> Confluence is the source of truth. Edits made to a synced article in Zendesk are overwritten the next time its page changes. Article settings that KB Sync doesn't manage, such as labels, comments, votes and subscriptions, are left alone.</li>
     <li><strong>Deleted or moved out:</strong> if a page is deleted, or moved outside the synced tree, its article is archived in Zendesk, not deleted. You can restore it from the Zendesk archive.</li>
+    <li><strong>Restored pages:</strong> Confluence restores a page from the trash to the top of its space. Move it back into the synced tree, and KB Sync publishes it again as a new article.</li>
     <li><strong>Stop syncing:</strong> removing a page tree, or disconnecting Zendesk, stops syncing. Articles already in Zendesk stay as they are.</li>
   </ul>
 
