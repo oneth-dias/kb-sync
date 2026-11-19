@@ -3,59 +3,61 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KB Sync for Zendesk: privacy policy</title>
+<title>KB Sync: privacy policy</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header><div class="wrap">
-  <a class="brand" href="index.html">KB Sync for Zendesk</a>
-  <nav><a href="index.html">Overview</a><a href="install.html">Install</a><a href="faq.html">FAQ</a><a href="troubleshooting.html">Troubleshooting</a><a href="release-notes.html">Release notes</a><a href="index.html#support">Support</a></nav>
+  <a class="brand" href="index.html">KB Sync</a>
+  <nav><a href="index.html">Overview</a><a href="install.html">Install</a><a href="faq.html">FAQ</a><a href="troubleshooting.html">Troubleshooting</a><a href="release-notes.html">Release notes</a><a href="freshdesk.html">Freshdesk</a><a href="index.html#support">Support</a></nav>
 </div></header>
 <main class="wrap">
   <h1>Privacy policy</h1>
-  <p>Last updated: 16 November 2026</p>
-  <p>This policy covers KB Sync for Zendesk ("KB Sync", "the app"), a Confluence Cloud app made by F &amp; D Consulting ("we", "us"), Sri Lanka. Questions: <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a>.</p>
+  <p>Last updated: 19 November 2026</p>
+  <p>This policy covers KB Sync for Zendesk and KB Sync for Freshdesk (each "KB Sync" or "the app"), Confluence Cloud apps made by F &amp; D Consulting ("we", "us"), Sri Lanka. Questions: <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a>.</p>
 
   <h2>Summary</h2>
   <ul>
     <li>KB Sync runs entirely on Atlassian's Forge platform. We don't operate servers that receive your data.</li>
-    <li>The app reads the Confluence pages you choose and writes them to the Zendesk account you connect. Nothing is sent anywhere else.</li>
+    <li>The app reads the Confluence pages you choose and writes them to the Zendesk or Freshdesk account you connect. Nothing is sent anywhere else.</li>
     <li>We don't sell data, use it for advertising, or train AI models on it, and the app has no analytics or tracking.</li>
   </ul>
 
   <h2>What the app processes, and why</h2>
   <table>
     <tr><th>Data</th><th>Purpose</th><th>Where it is kept</th></tr>
-    <tr><td>Content of the Confluence pages and folders you choose to sync: titles, body and attached images</td><td>To publish them as Zendesk articles</td><td>Not stored by the app. It's read from Confluence and written to your Zendesk account.</td></tr>
-    <tr><td>Sync records: Confluence page IDs and version numbers, page titles, Zendesk article, section and category IDs and URLs</td><td>To update the right article, and to skip unchanged pages</td><td>Forge app storage on your Confluence site</td></tr>
-    <tr><td>Settings: the page trees you chose, the Zendesk category, the layout and publishing options, and your Zendesk subdomain</td><td>To run the sync as configured</td><td>Forge app storage</td></tr>
-    <tr><td>Zendesk OAuth access and refresh tokens</td><td>To call the Zendesk Help Center API on your behalf</td><td>Forge encrypted secret storage</td></tr>
+    <tr><td>Content of the Confluence pages and folders you choose to sync: titles, body and attached images</td><td>To publish them as help center articles</td><td>Not stored by the app. It's read from Confluence and written to your Zendesk or Freshdesk account.</td></tr>
+    <tr><td>Sync records: Confluence page IDs and version numbers, page titles, Zendesk or Freshdesk article, section or folder, and category IDs and URLs</td><td>To update the right article, and to skip unchanged pages</td><td>Forge app storage on your Confluence site</td></tr>
+    <tr><td>Settings: the page trees you chose, the category, the layout, publishing and visibility options, and your Zendesk subdomain or Freshdesk address</td><td>To run the sync as configured</td><td>Forge app storage</td></tr>
+    <tr><td>Zendesk OAuth access and refresh tokens (KB Sync for Zendesk)</td><td>To call the Zendesk Help Center API on your behalf</td><td>Forge encrypted secret storage</td></tr>
+    <tr><td>Freshdesk API key (KB Sync for Freshdesk)</td><td>To call the Freshdesk knowledge base API on your behalf</td><td>Forge encrypted secret storage. It's never shown again, sent back to the browser, or written to logs.</td></tr>
   </table>
   <p>Forge app storage belongs to your Confluence site's installation of the app. It is hosted by Atlassian, follows your site's data residency settings, and isn't shared between customers.</p>
 
   <h2>Who can access it</h2>
   <ul>
-    <li><strong>You:</strong> Confluence admins can see the settings and sync status. Content in Zendesk is controlled by your Zendesk permissions.</li>
-    <li><strong>Us:</strong> we can't read your Confluence content, your Zendesk content or your app storage. Atlassian gives us operational logs. The app is built to log only Confluence page IDs, Zendesk article IDs, counts and error messages, not page content. They're kept for Atlassian's standard log retention period. We use them only to give support and fix problems.</li>
-    <li><strong>Service providers:</strong> Atlassian (hosting, through Forge) and Zendesk (the account you connect). Each processes data under its own terms with you.</li>
+    <li><strong>You:</strong> Confluence admins can see the settings and sync status. Content in Zendesk or Freshdesk is controlled by that product's permissions.</li>
+    <li><strong>Us:</strong> we can't read your Confluence content, your Zendesk content or your app storage. Atlassian gives us operational logs. The app is built to log only Confluence page IDs, Zendesk article IDs, counts and error messages, not page content or keys. They're kept for Atlassian's standard log retention period. We use them only to give support and fix problems.</li>
+    <li><strong>Service providers:</strong> Atlassian (hosting, through Forge) and Zendesk or Freshdesk (the account you connect). Each processes data under its own terms with you.</li>
   </ul>
 
   <h2>Scopes</h2>
-  <p>The app asks for Confluence permissions to read pages, folders, attachments and the page hierarchy, plus its own storage. It asks for read and write access to the Zendesk Help Center only (<code>hc:read hc:write</code>). It doesn't ask for, and can't use, permission to change Confluence content or to see Zendesk tickets or users.</p>
+  <p>The app asks for Confluence permissions to read pages, folders, attachments and the page hierarchy, plus its own storage. KB Sync for Zendesk asks for read and write access to the Zendesk Help Center only (<code>hc:read hc:write</code>), and can't see Zendesk tickets or users. KB Sync for Freshdesk uses the API key you provide, which carries the permissions of the agent it belongs to; the app only calls Freshdesk's knowledge base (solutions) API. Neither app can change Confluence content.</p>
 
   <h2>Retention and deletion</h2>
   <ul>
     <li><strong>Removing a page tree:</strong> deletes its sync records from app storage.</li>
     <li><strong>Disconnecting Zendesk:</strong> deletes the stored tokens and revokes the access token in Zendesk.</li>
+    <li><strong>Disconnecting Freshdesk:</strong> deletes the stored API key. You can also reset the key in Freshdesk (Profile settings) at any time.</li>
     <li><strong>Uninstalling the app:</strong> Atlassian deletes the app's storage for your site under its Forge data-retention policy.</li>
-    <li><strong>Articles in Zendesk:</strong> they're your content in your Zendesk account. Removing or uninstalling the app doesn't delete them.</li>
+    <li><strong>Published articles:</strong> they're your content in your Zendesk or Freshdesk account. Removing or uninstalling the app doesn't delete them.</li>
   </ul>
 
   <h2>Personal data</h2>
   <p>The app doesn't store personal data. Where page content passing through it contains personal data, we act as a processor for you, the customer. We process it only to provide the app, as set out above. To exercise data-protection rights, or to ask for a data processing agreement, email <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a>.</p>
 
   <h2>Security</h2>
-  <p>All traffic uses HTTPS. Tokens are kept in Forge's encrypted secret storage, and the app asks only for the permissions listed above. To report a security issue, email <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a>.</p>
+  <p>All traffic uses HTTPS. Tokens and API keys are kept in Forge's encrypted secret storage, and the app asks only for the permissions listed above. To report a security issue, email <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a>.</p>
 
   <h2>Changes</h2>
   <p>If this policy changes in a way that affects how your data is handled, we'll update the date above and announce the change in the app's Marketplace listing.</p>

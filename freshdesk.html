@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KB Sync for Freshdesk · documentation</title>
+<meta name="description" content="Publish Confluence pages to your Freshdesk knowledge base and keep them in sync automatically.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="index.html">KB Sync</a>
+  <nav><a href="index.html">Overview</a><a href="install.html">Install</a><a href="faq.html">FAQ</a><a href="troubleshooting.html">Troubleshooting</a><a href="release-notes.html">Release notes</a><a href="freshdesk.html" aria-current="page">Freshdesk</a><a href="index.html#support">Support</a></nav>
+</div></header>
+<main class="wrap">
+  <h1>KB Sync for Freshdesk</h1>
+  <p class="lede">Write your solution articles in Confluence. KB Sync publishes them to your Freshdesk knowledge base and keeps them up to date. Every edit reaches Freshdesk within seconds.</p>
+  <p>KB Sync for Freshdesk works like <a href="index.html">KB Sync for Zendesk</a>: the same page trees, layouts, formatting and limits. This page covers what's different.</p>
+
+  <h2 id="setup">Set up (5 minutes)</h2>
+  <p>You need to be a Confluence site admin, and have a Freshdesk API key of an admin, or of an agent who can publish solution articles.</p>
+  <ol>
+    <li>Install <strong>KB Sync for Freshdesk</strong> from the Atlassian Marketplace.</li>
+    <li>Open its settings: <a href="https://admin.atlassian.com">admin.atlassian.com</a> &gt; <strong>Apps</strong> &gt; <strong>Sites</strong> &gt; your site &gt; <strong>Connected apps</strong> &gt; <strong>KB Sync for Freshdesk</strong> &gt; <strong>⋯</strong> &gt; <strong>Configure</strong>.</li>
+    <li>Get your API key: in Freshdesk, click your <strong>profile picture</strong> (top right) &gt; <strong>Profile settings</strong> &gt; <strong>View API key</strong>.</li>
+    <li>On the settings page, enter your Freshdesk address (the <code>acme</code> in <code>acme.freshdesk.com</code>) and paste the API key. Click <strong>Connect Freshdesk</strong>. KB Sync checks the key against your knowledge base straight away.</li>
+    <li>Under <strong>Add a page tree</strong>, paste a link to a Confluence page or folder, choose the options, and click <strong>Add and sync</strong>.</li>
+  </ol>
+  <p class="note">The API key is kept in Atlassian's encrypted storage, is never shown again, and is only used for Freshdesk's knowledge base API. <strong>Disconnect</strong> deletes it. You can also reset the key in Freshdesk at any time; then connect again with the new key.</p>
+
+  <h2 id="mapping">How Confluence maps to Freshdesk</h2>
+  <table>
+    <tr><th>Confluence</th><th>Freshdesk</th></tr>
+    <tr><td>The page or folder you sync</td><td>A solution category (new, or one you choose)</td></tr>
+    <tr><td>Folders, and pages with children</td><td>Folders, with subfolders where your plan allows them; otherwise folders named by their path, like <em>Admin › Billing</em></td></tr>
+    <tr><td>Pages</td><td>Solution articles, as drafts or published</td></tr>
+    <tr><td>Images and attached files</td><td>Uploaded to the article</td></tr>
+    <tr><td>Info, note, warning and panel macros, status labels</td><td>Styled boxes and labels that look right in any portal theme</td></tr>
+    <tr><td>Links between synced pages</td><td>Links between the matching articles</td></tr>
+    <tr><td>Deleted page, or moved out of the tree</td><td>Article unpublished (set back to draft), never deleted</td></tr>
+  </table>
+
+  <h2 id="differences">Differences from the Zendesk version</h2>
+  <ul>
+    <li><strong>Who can see the articles</strong> is set per folder in Freshdesk: <em>Everyone</em>, <em>Signed-in users</em> or <em>Agents only</em>. KB Sync applies your choice to every folder it manages.</li>
+    <li><strong>Article order:</strong> Freshdesk's API doesn't let apps set the order of articles or folders, so Freshdesk's own ordering is used.</li>
+    <li><strong>Images also appear under "Attachments"</strong> at the bottom of each article in the portal, because Freshdesk lists every file uploaded to an article.</li>
+    <li><strong>Drafts mode:</strong> when you choose drafts and later publish an article in Freshdesk, further Confluence edits are saved as a draft on that article for you to review and publish. With <em>Publish straight away</em>, every edit goes live.</li>
+    <li><strong>One knowledge base:</strong> the app publishes to the main portal of the Freshdesk account you connect.</li>
+  </ul>
+
+  <h2 id="troubleshooting">Troubleshooting</h2>
+  <table>
+    <tr><th>You see</th><th>Do this</th></tr>
+    <tr><td>"Freshdesk didn't accept that API key"</td><td>Copy the key again from <strong>Profile settings</strong> &gt; <strong>View API key</strong>, with no spaces. If you reset the key in Freshdesk, the old one stops working.</td></tr>
+    <tr><td>"That API key's agent can't manage the knowledge base"</td><td>Use the key of a Freshdesk admin, or of an agent whose role can publish solution articles.</td></tr>
+    <tr><td>"KB Sync can't reach … .freshdesk.com"</td><td>Enter the address Freshdesk gave your account (<code>acme.freshdesk.com</code>), even if your portal uses a custom domain.</td></tr>
+    <tr><td>Syncing a large tree is slow</td><td>Freshdesk limits API calls per minute by plan (trial accounts: 50 per minute). KB Sync waits and continues automatically.</td></tr>
+    <tr><td>An edit isn't visible in the portal</td><td>Check the tree is set to <em>Publish straight away</em>. In drafts mode, publish the article in Freshdesk.</td></tr>
+  </table>
+  <p>For everything else, see the <a href="faq.html">FAQ</a> and <a href="troubleshooting.html">troubleshooting</a> pages; they apply to both versions.</p>
+
+  <h2 id="support">Support</h2>
+  <p>Email <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a>. We reply within one business day (Monday to Friday, 9:00–17:00 Sri Lanka time, GMT+5:30), and we're happy to set things up with you on a short call. Please don't send your API key, passwords or page content.</p>
+</main>
+<footer><div class="wrap">© 2026 F &amp; D Consulting · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a></div></footer>
+</body>
+</html>
