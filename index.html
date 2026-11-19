@@ -10,7 +10,7 @@
 <body>
 <header><div class="wrap">
   <a class="brand" href="index.html">KB Sync for Zendesk</a>
-  <nav><a href="index.html" aria-current="page">Docs</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="#support">Support</a></nav>
+  <nav><a href="index.html" aria-current="page">Overview</a><a href="install.html">Install</a><a href="faq.html">FAQ</a><a href="troubleshooting.html">Troubleshooting</a><a href="release-notes.html">Release notes</a><a href="index.html#support">Support</a></nav>
 </div></header>
 <main class="wrap">
   <h1>KB Sync for Zendesk</h1>
@@ -24,6 +24,7 @@
     <li>Enter your Zendesk subdomain (the <code>acme</code> in <code>acme.zendesk.com</code>) and click <strong>Connect Zendesk</strong>. Sign in and click <strong>Allow</strong> on the Zendesk tab. The settings page shows <em>Connected</em> when you're done.</li>
     <li>Under <strong>Add a page tree</strong>, paste a link to the Confluence page or folder that holds your help content. Then choose a Zendesk category, a layout, and whether articles start as drafts. Click <strong>Add and sync</strong>.</li>
   </ol>
+  <p>Step-by-step details, with every option explained, are in <a href="install.html">Installation and setup</a>.</p>
   <p>The first sync of a few hundred pages takes a few minutes. After that, each edit you publish in Confluence reaches Zendesk within seconds.</p>
 
   <h2 id="how">How syncing works</h2>
@@ -61,36 +62,17 @@
   </table>
   <p>Macros that only make sense inside Confluence, such as search boxes, "create page" buttons, reports and recently-updated lists, are left out. Most third-party formatting macros keep their content but lose their styling. In our test of 1,698 real help-center pages, about 97% converted usefully.</p>
 
-  <h2 id="faq">Questions</h2>
-  <h3>Which Zendesk permissions does KB Sync ask for?</h3>
-  <p>Only help center access: <code>hc:read</code> and <code>hc:write</code>. It can't see tickets, users or anything else in Zendesk.</p>
-  <h3>Do articles go live straight away?</h3>
-  <p>Only if you choose <em>Publish straight away</em>. The default creates drafts so you can review them first. If you change the setting later, existing synced articles are updated to match.</p>
-  <h3>Who can see the articles?</h3>
-  <p>You choose: everyone, or one of your Zendesk user segments, such as signed-in users or agents only.</p>
-  <h3>Can I sync more than one space or tree?</h3>
-  <p>Yes: up to 25 page trees per Confluence site, each into its own category.</p>
-  <h3>How big can a page tree be?</h3>
-  <p>Up to 10,000 pages per tree. A large first sync runs in batches of about 12 minutes each, and the status shows <em>Syncing</em> until it's finished. A 1,000-page tree usually takes 15–30 minutes the first time, depending on your Zendesk plan's API limits. After that, only changed pages are sent.</p>
-  <h3>My Zendesk account has several brands. Can I publish to a specific brand's help center?</h3>
-  <p>Yes. When you add a page tree, enter the brand's Zendesk subdomain under <strong>Zendesk brand</strong> and click <strong>Use this brand</strong>. Leave it empty for your main help center.</p>
-  <h3>Does it work with my help center's language?</h3>
-  <p>Articles are written in your help center's default language.</p>
-  <h3>Where does my content go?</h3>
-  <p>KB Sync runs on Atlassian's Forge platform. Your page content goes from Confluence straight to your Zendesk account and never passes through our servers. See the <a href="privacy.html">privacy policy</a>.</p>
-
-  <h2 id="troubleshooting">Troubleshooting</h2>
-  <table>
-    <tr><th>You see</th><th>Do this</th></tr>
-    <tr><td>"Zendesk sign-in has expired or was revoked"</td><td>Click <strong>Disconnect</strong>, then connect Zendesk again. Synced articles are kept and matched up again.</td></tr>
-    <tr><td>"KB Sync can't find that page or folder"</td><td>Check the link. Pages with view restrictions may not be readable by KB Sync; remove the restriction or sync a different page.</td></tr>
-    <tr><td>A page tree shows <em>Failed</em></td><td>The status shows the reason. Fix it, then click <strong>Sync now</strong>. Failed syncs are also retried by the hourly check.</td></tr>
-    <tr><td>An image is missing from an article</td><td>Check that the image is attached to a page KB Sync can read. Images that can't be copied are left out rather than shown broken.</td></tr>
-  </table>
+  <h2 id="more">More help</h2>
+  <ul>
+    <li><a href="install.html">Installation and setup</a>: requirements, every setting, permissions, and how to uninstall.</li>
+    <li><a href="faq.html">Frequently asked questions</a>: pricing, content, Zendesk plans, limits and security.</li>
+    <li><a href="troubleshooting.html">Troubleshooting</a>: what each message on the settings page means, and what to do.</li>
+    <li><a href="release-notes.html">Release notes</a>: what's new.</li>
+  </ul>
 
   <h2 id="support">Support</h2>
   <p>Email <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a>. We reply within one business day (Monday to Friday, 9:00–17:00 Sri Lanka time, GMT+5:30). Please include your Confluence site address. Don't send page content or passwords.</p>
 </main>
-<footer><div class="wrap">© 2026 F &amp; D Consulting · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div></footer>
+<footer><div class="wrap">© 2026 F &amp; D Consulting · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a></div></footer>
 </body>
 </html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Installation and setup · KB Sync for Zendesk</title>
+<meta name="description" content="Install KB Sync, connect Zendesk and publish your first Confluence page tree.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="index.html">KB Sync for Zendesk</a>
+  <nav><a href="index.html">Overview</a><a href="install.html" aria-current="page">Install</a><a href="faq.html">FAQ</a><a href="troubleshooting.html">Troubleshooting</a><a href="release-notes.html">Release notes</a><a href="index.html#support">Support</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Installation and setup</h1>
+  <p class="lede">From install to your first synced articles in about five minutes.</p>
+
+  <h2 id="requirements">Before you start</h2>
+  <table>
+    <tr><th>You need</th><th>Why</th></tr>
+    <tr><td>Confluence Cloud, and site admin rights</td><td>Only site admins can install apps and open KB Sync's settings page.</td></tr>
+    <tr><td>A Zendesk account with a help center (Guide)</td><td>Articles are published to your help center.</td></tr>
+    <tr><td>A Zendesk admin or help center manager sign-in</td><td>You sign in once to let KB Sync manage help center content.</td></tr>
+    <tr><td>Optional: Guide Enterprise</td><td>Only needed for sections inside sections. On other plans KB Sync names sections by their path instead, for example <em>Admin › Billing</em>.</td></tr>
+  </table>
+
+  <h2 id="install">1. Install the app</h2>
+  <ol>
+    <li>Open KB Sync's page on the <a href="https://marketplace.atlassian.com/apps/3346153146">Atlassian Marketplace</a>.</li>
+    <li>Click <strong>Try it free</strong> (or <strong>Get it now</strong>), and choose your Confluence site.</li>
+    <li>Review the permissions (listed <a href="#permissions">below</a>) and click <strong>Install</strong>.</li>
+  </ol>
+  <p>Sites with up to 10 Confluence users can use KB Sync for free. Larger sites start with Atlassian's free trial, then are billed per user through Atlassian.</p>
+
+  <h2 id="settings">2. Open KB Sync's settings</h2>
+  <ol>
+    <li>Go to <a href="https://admin.atlassian.com">admin.atlassian.com</a> &gt; <strong>Apps</strong> &gt; <strong>Sites</strong> &gt; your site &gt; <strong>Connected apps</strong>.</li>
+    <li>Find <strong>KB Sync</strong>, click <strong>⋯</strong>, then <strong>Configure</strong>.</li>
+  </ol>
+  <p>Bookmark the page that opens. It's where you manage everything: the Zendesk connection, the page trees you sync, and their status.</p>
+
+  <h2 id="connect">3. Connect Zendesk</h2>
+  <ol>
+    <li>Under <strong>Zendesk connection</strong>, enter your Zendesk subdomain: the <code>acme</code> in <code>acme.zendesk.com</code>.</li>
+    <li>Click <strong>Connect Zendesk</strong>. A Zendesk tab opens.</li>
+    <li>Sign in as a Zendesk admin or help center manager, and click <strong>Allow</strong>.</li>
+    <li>Close that tab. The settings page shows <em>Connected</em> by itself within a few seconds.</li>
+  </ol>
+  <p class="note">KB Sync asks Zendesk only for help center access (<code>hc:read</code>, <code>hc:write</code>). It can't see tickets, users or any other Zendesk data.</p>
+
+  <h2 id="add">4. Add a page tree</h2>
+  <ol>
+    <li>Under <strong>Add a page tree</strong>, paste a link to the Confluence page or folder that holds your help content. Short links (<code>/wiki/x/…</code>) work too.</li>
+    <li>Choose the options below, then click <strong>Add and sync</strong>.</li>
+  </ol>
+  <table>
+    <tr><th>Option</th><th>Choices</th></tr>
+    <tr><td>Zendesk brand</td><td>Leave empty for your main help center. For another brand, enter its subdomain and click <strong>Use this brand</strong>.</td></tr>
+    <tr><td>Zendesk category</td><td>A new category named after the page (default), or one of your existing categories.</td></tr>
+    <tr><td>Layout</td><td><strong>Mirror the page tree</strong>: folders and pages with children become sections. <strong>One section</strong>: every article in a single section.</td></tr>
+    <tr><td>New articles</td><td><strong>Drafts</strong> (default), so you can review them first, or <strong>Publish straight away</strong>.</td></tr>
+    <tr><td>Who can see the articles</td><td>Everyone, or one of your Zendesk user segments.</td></tr>
+  </table>
+  <p>You can change the layout, publishing and visibility later with <strong>Edit</strong>. The category and brand are fixed once a tree is added; to change them, remove the tree and add it again.</p>
+
+  <h2 id="check">5. Check the result in Zendesk</h2>
+  <ul>
+    <li>The page tree's status shows <em>Syncing</em>, then <em>Synced</em> with the number of articles. Click the category name to open it in your help center.</li>
+    <li>If you chose drafts, find them in Zendesk under <strong>Knowledge admin</strong> &gt; <strong>Manage articles</strong> &gt; <strong>Drafts</strong>, and publish them when you're happy.</li>
+    <li>From now on, each edit published in Confluence reaches Zendesk within seconds. Everything is also checked once an hour.</li>
+  </ul>
+
+  <h2 id="permissions">What KB Sync can access</h2>
+  <table>
+    <tr><th>Where</th><th>Access</th><th>Used for</th></tr>
+    <tr><td>Confluence</td><td>Read pages, folders, attachments and page hierarchy</td><td>Reading the content you choose to sync. KB Sync never changes Confluence content.</td></tr>
+    <tr><td>Confluence</td><td>App storage</td><td>Settings, and which page matches which article.</td></tr>
+    <tr><td>Zendesk</td><td>Help center read and write</td><td>Creating and updating categories, sections, articles and article images.</td></tr>
+  </table>
+  <p>KB Sync runs entirely on Atlassian's Forge platform. Page content goes from Confluence straight to your Zendesk account. See the <a href="privacy.html">privacy policy</a>.</p>
+
+  <h2 id="uninstall">Stop syncing or uninstall</h2>
+  <ul>
+    <li><strong>Stop one tree:</strong> click <strong>Remove</strong> next to it. Its articles stay in Zendesk.</li>
+    <li><strong>Disconnect Zendesk:</strong> click <strong>Disconnect</strong>. KB Sync revokes its Zendesk sign-in, and syncing stops. Articles stay in Zendesk.</li>
+    <li><strong>Uninstall:</strong> click <strong>Disconnect</strong> first, then go to <a href="https://admin.atlassian.com">admin.atlassian.com</a> &gt; <strong>Apps</strong> &gt; <strong>Sites</strong> &gt; your site &gt; <strong>Connected apps</strong> &gt; <strong>⋯</strong> &gt; <strong>Remove app</strong>. Atlassian deletes KB Sync's stored settings. Articles already in Zendesk are yours and stay where they are.</li>
+  </ul>
+  <p>Updates are installed automatically by Atlassian; there's nothing to upgrade by hand.</p>
+</main>
+<footer><div class="wrap">© 2026 F &amp; D Consulting · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a></div></footer>
+</body>
+</html>

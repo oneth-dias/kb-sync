@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Frequently asked questions · KB Sync for Zendesk</title>
+<meta name="description" content="Answers about how KB Sync publishes Confluence pages to Zendesk: pricing, content, permissions and limits.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="index.html">KB Sync for Zendesk</a>
+  <nav><a href="index.html">Overview</a><a href="install.html">Install</a><a href="faq.html" aria-current="page">FAQ</a><a href="troubleshooting.html">Troubleshooting</a><a href="release-notes.html">Release notes</a><a href="index.html#support">Support</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Frequently asked questions</h1>
+
+  <h2 id="pricing">Pricing and licensing</h2>
+  <h3>How much does KB Sync cost?</h3>
+  <p>It's free for Confluence sites with up to 10 users. Larger sites pay per Confluence user, billed monthly or yearly through Atlassian; see the pricing on the <a href="https://marketplace.atlassian.com/apps/3346153146">Marketplace listing</a>. There's no separate Zendesk charge.</p>
+  <h3>Is there a free trial?</h3>
+  <p>Yes. Atlassian's standard free trial applies, and you can cancel any time from Atlassian Administration.</p>
+  <h3>What happens if the subscription ends?</h3>
+  <p>Syncing stops. Articles already in Zendesk stay as they are, and syncing picks up where it left off if you subscribe again.</p>
+
+  <h2 id="content">Content</h2>
+  <h3>Which pages are synced?</h3>
+  <p>The page or folder you choose and every published page under it. Draft and unpublished pages aren't included. Each page becomes one Zendesk article.</p>
+  <h3>What formatting carries over?</h3>
+  <p>Text, headings, lists, tables, images, code blocks, info/note/warning panels, expand sections, status labels, included pages and links between pages. The <a href="index.html#content">overview</a> has the full list. Macros that only work inside Confluence, such as search boxes or reports, are left out.</p>
+  <h3>Are images and files copied?</h3>
+  <p>Yes. Images are uploaded to the article, and so are files linked in the page or shown with the File macro, such as PDFs. They're uploaded again only when they change.</p>
+  <h3>Do links between pages work in Zendesk?</h3>
+  <p>Links to other synced pages point to the matching Zendesk articles. Links to anything else in Confluence still point to Confluence, so readers need Confluence access to open them.</p>
+  <h3>Are comments, labels or page history synced?</h3>
+  <p>No. Only the page title and content are published. Zendesk comments, votes and labels on synced articles are left alone.</p>
+  <h3>Can I edit the articles in Zendesk?</h3>
+  <p>You can, but Confluence is the source: the next time the page changes, the article is overwritten with the Confluence version. Make content changes in Confluence.</p>
+  <h3>What if I delete or move a page?</h3>
+  <p>If a page is deleted or moved outside the synced tree, its article is archived in Zendesk (not deleted), so you can restore it. Moves within the tree move the article to the matching section.</p>
+  <h3>Can I keep a page out of Zendesk?</h3>
+  <p>Move it outside the synced page or folder. Pages restricted so KB Sync can't read them aren't published either.</p>
+
+  <h2 id="zendesk">Zendesk</h2>
+  <h3>Which Zendesk plans work?</h3>
+  <p>Any plan with a help center (Guide). Sections inside sections need Guide Enterprise; on other plans KB Sync creates sections side by side, named by their path.</p>
+  <h3>Can I publish to a specific brand?</h3>
+  <p>Yes. When adding a page tree, enter the brand's subdomain under <strong>Zendesk brand</strong>. Each page tree can go to a different brand.</p>
+  <h3>Which language are articles written in?</h3>
+  <p>Your help center's default language.</p>
+  <h3>Will KB Sync touch my existing articles?</h3>
+  <p>No. It only changes articles and sections it created. If you sync into an existing category, your own sections and articles there are left alone, and KB Sync never removes a section that still holds articles it doesn't manage.</p>
+
+  <h2 id="limits">Limits</h2>
+  <table>
+    <tr><th>Limit</th><th>Value</th></tr>
+    <tr><td>Page trees per Confluence site</td><td>25</td></tr>
+    <tr><td>Pages per tree</td><td>10,000</td></tr>
+    <tr><td>Time for an edit to reach Zendesk</td><td>Usually a few seconds</td></tr>
+    <tr><td>Full check of every tree</td><td>Every hour</td></tr>
+    <tr><td>First sync of 1,000 pages</td><td>About 15–30 minutes, depending on your Zendesk plan's API limits</td></tr>
+  </table>
+
+  <h2 id="security">Security and data</h2>
+  <h3>Where is my content stored?</h3>
+  <p>In your Confluence site and your Zendesk account, nowhere else. KB Sync runs on Atlassian Forge, stores only settings and page-to-article IDs, and doesn't send content to our own servers. See the <a href="privacy.html">privacy policy</a>.</p>
+  <h3>Does KB Sync need a Zendesk API token or password?</h3>
+  <p>No. You sign in with Zendesk's own OAuth screen, and you can revoke access any time with <strong>Disconnect</strong>.</p>
+  <h3>Who can change KB Sync's settings?</h3>
+  <p>Only Confluence site admins.</p>
+</main>
+<footer><div class="wrap">© 2026 F &amp; D Consulting · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a></div></footer>
+</body>
+</html>

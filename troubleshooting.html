@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Troubleshooting · KB Sync for Zendesk</title>
+<meta name="description" content="Fix common KB Sync problems: connecting Zendesk, failed syncs, missing articles or images.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="index.html">KB Sync for Zendesk</a>
+  <nav><a href="index.html">Overview</a><a href="install.html">Install</a><a href="faq.html">FAQ</a><a href="troubleshooting.html" aria-current="page">Troubleshooting</a><a href="release-notes.html">Release notes</a><a href="index.html#support">Support</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Troubleshooting</h1>
+  <p class="lede">The message you see on KB Sync's settings page, and what to do about it.</p>
+
+  <h2 id="connect">Connecting Zendesk</h2>
+  <table>
+    <tr><th>You see</th><th>Do this</th></tr>
+    <tr><td>"Enter your Zendesk subdomain"</td><td>Enter only the part before <code>.zendesk.com</code>: <code>acme</code>, not <code>https://acme.zendesk.com</code>. If you use a custom help center domain, still enter the zendesk.com subdomain.</td></tr>
+    <tr><td>"Zendesk did not authorize KB Sync"</td><td>Click <strong>Connect Zendesk</strong> again and choose <strong>Allow</strong>. Sign in as a Zendesk admin or help center manager; agents without help center rights can't approve it.</td></tr>
+    <tr><td>"This sign-in link has expired or was already used"</td><td>Sign-in links last 15 minutes and work once. Start again from the settings page.</td></tr>
+    <tr><td>The settings page doesn't show <em>Connected</em> after you allowed access</td><td>Reload the settings page. If it still isn't connected, check that you approved the same subdomain you entered.</td></tr>
+    <tr><td>"Zendesk sign-in has expired or was revoked"</td><td>Someone removed KB Sync's access in Zendesk, or it expired. Click <strong>Disconnect</strong>, then <strong>Connect Zendesk</strong> again. Existing articles are matched up again, not duplicated.</td></tr>
+  </table>
+
+  <h2 id="adding">Adding a page tree</h2>
+  <table>
+    <tr><th>You see</th><th>Do this</th></tr>
+    <tr><td>"Paste a Confluence page or folder link"</td><td>Copy the link from the browser's address bar while viewing the page, or use <strong>Share</strong> &gt; <strong>Copy link</strong>.</td></tr>
+    <tr><td>"KB Sync can't find that page or folder"</td><td>Check the link is from this Confluence site. Pages with view restrictions may not be readable by KB Sync; remove the restriction or choose another page.</td></tr>
+    <tr><td>"… is already inside …, which is being synced"</td><td>That page is already part of another synced tree. Each page can only be synced once.</td></tr>
+    <tr><td>"You can sync up to 25 page trees"</td><td>Remove a tree you no longer need, or sync a parent page that covers several trees.</td></tr>
+  </table>
+
+  <h2 id="syncing">Syncing</h2>
+  <table>
+    <tr><th>You see</th><th>Do this</th></tr>
+    <tr><td>Status stays at <em>Syncing</em></td><td>Large trees sync in batches of about 12 minutes. A 1,000-page first sync can take up to half an hour. Leave it running; later syncs only send changes.</td></tr>
+    <tr><td>Status shows <em>Failed</em></td><td>The status shows the reason. Fix it, then click <strong>Sync now</strong>. Failed trees are retried by the hourly check, and nothing synced before the failure is duplicated.</td></tr>
+    <tr><td>"Only the first 10,000 pages are synced"</td><td>Only the first 10,000 pages are synced. Split the tree into smaller trees.</td></tr>
+    <tr><td>An edit hasn't reached Zendesk</td><td>Check the page is published, not a draft. Then click <strong>Sync now</strong>, or wait for the hourly check.</td></tr>
+  </table>
+
+  <h2 id="zendesk">In Zendesk</h2>
+  <table>
+    <tr><th>You see</th><th>Do this</th></tr>
+    <tr><td>Articles don't appear in the help center</td><td>They're probably drafts (the default). Publish them in Zendesk, or <strong>Edit</strong> the tree and choose <strong>Publish straight away</strong>. Also check the visibility setting: articles for a user segment only show to signed-in members of it.</td></tr>
+    <tr><td>Sections are side by side, named like <em>Admin › Billing</em></td><td>Your Zendesk plan doesn't include sections inside sections (Guide Enterprise). This is expected; the path keeps the structure readable.</td></tr>
+    <tr><td>An image is missing</td><td>Check the image is attached to a page KB Sync can read. Images that can't be copied are left out rather than shown broken.</td></tr>
+    <tr><td>A link opens Confluence instead of an article</td><td>The link points to a page outside the synced tree. Add that page to a synced tree, or link to something public.</td></tr>
+    <tr><td>Formatting looks different</td><td>Your help center theme styles articles. Callouts and status labels carry their own styling; everything else follows your theme.</td></tr>
+    <tr><td>My edits in Zendesk disappeared</td><td>Synced articles are overwritten when their Confluence page changes. Make content changes in Confluence.</td></tr>
+  </table>
+
+  <h2 id="other">Other</h2>
+  <table>
+    <tr><th>You see</th><th>Do this</th></tr>
+    <tr><td>"KB Sync's license isn't active"</td><td>A site admin can subscribe, or restart the subscription, in <a href="https://admin.atlassian.com">Atlassian Administration</a> &gt; <strong>Apps</strong>.</td></tr>
+    <tr><td>You can't find the settings page</td><td>Only site admins can open it. See <a href="install.html#settings">Open KB Sync's settings</a>.</td></tr>
+  </table>
+
+  <h2 id="help">Still stuck?</h2>
+  <p>Email <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a> with your Confluence site address and the message you see. We reply within one business day (Monday to Friday, 9:00–17:00 Sri Lanka time, GMT+5:30), and we're happy to set things up with you on a short call. Please don't send passwords or page content.</p>
+</main>
+<footer><div class="wrap">© 2026 F &amp; D Consulting · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a></div></footer>
+</body>
+</html>
