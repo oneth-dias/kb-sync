@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to publish Confluence pages to Zendesk or Freshdesk: your options</title>
+<meta name="description" content="Four ways to get Confluence content into a Zendesk help center or Freshdesk knowledge base: copy and paste, Zendesk's Confluence connector, page-by-page sync apps, and whole-tree sync with KB Sync.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="index.html">KB Sync</a>
+  <nav><a href="index.html">Overview</a><a href="install.html">Install</a><a href="faq.html">FAQ</a><a href="troubleshooting.html">Troubleshooting</a><a href="release-notes.html">Release notes</a><a href="freshdesk.html">Freshdesk</a><a href="index.html#support">Support</a></nav>
+</div></header>
+<main class="wrap">
+  <h1>How to publish Confluence pages to Zendesk or Freshdesk</h1>
+  <p class="lede">Many support teams write their help content in Confluence, but customers read it in a Zendesk help center or a Freshdesk knowledge base. These are the ways to get it there, and what each one is good for.</p>
+
+  <h2 id="copy">1. Copy and paste</h2>
+  <p>Fine for a handful of articles. It gets expensive as soon as pages change: every edit has to be repeated in the help center, images re-uploaded, and links between articles fixed by hand. Articles quietly drift out of date.</p>
+
+  <h2 id="zendesk-connector">2. Zendesk's own Confluence connection</h2>
+  <p>Zendesk can connect a Confluence site as an <a href="https://support.zendesk.com/hc/en-us/articles/10253025835674">external knowledge source</a>, so Confluence content shows up in help center search, generative search and AI agents. It needs Guide Professional or Enterprise.</p>
+  <p>It's a search integration, not publishing: your Confluence pages don't become Zendesk articles in your help center's categories and sections, and the content is removed again if you remove the connection. Choose it if search and AI answers are all you need.</p>
+
+  <h2 id="page-by-page">3. Sync apps that work page by page</h2>
+  <p>Some Marketplace apps sync a Confluence page to an article once you switch sync on for that page. That works for a small, stable set of pages. With hundreds of pages, every new page has to be switched on by hand, and the help center's structure has to be kept in step separately.</p>
+
+  <h2 id="tree-sync">4. Sync whole page trees with KB Sync</h2>
+  <p><a href="index.html">KB Sync for Zendesk</a> and <a href="freshdesk.html">KB Sync for Freshdesk</a> publish a Confluence page or folder <em>and everything under it</em>:</p>
+  <ul>
+    <li><strong>Structure follows Confluence:</strong> folders and parent pages become Zendesk sections or Freshdesk folders, nested where your plan allows it.</li>
+    <li><strong>New pages are picked up automatically</strong>, with nothing to switch on page by page. Edits reach the help center within seconds, with a full check every hour.</li>
+    <li><strong>Content survives the trip:</strong> images and attached files are uploaded, panels keep their styling, and links between pages point to the matching articles.</li>
+    <li><strong>Safe by default:</strong> new articles start as drafts, and removed pages are archived or unpublished, never deleted.</li>
+  </ul>
+  <p>It runs on Atlassian Forge, so content goes straight from Confluence to your own help desk. It's free for Confluence sites with up to 10 users.</p>
+
+  <h2 id="compare">Side by side</h2>
+  <table>
+    <tr><th></th><th>Copy and paste</th><th>Zendesk connector</th><th>Page-by-page apps</th><th>KB Sync</th></tr>
+    <tr><td>Creates real help center articles</td><td>Yes</td><td>No (search only)</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>New pages published automatically</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td></tr>
+    <tr><td>Keeps the page tree as sections or folders</td><td>By hand</td><td>No</td><td>Varies</td><td>Yes</td></tr>
+    <tr><td>Edits stay in sync</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes, within seconds</td></tr>
+    <tr><td>Works with Freshdesk</td><td>Yes</td><td>No</td><td>Varies</td><td>Yes</td></tr>
+  </table>
+
+  <h2 id="choose">Which should you choose?</h2>
+  <ul>
+    <li>A few articles that rarely change: <strong>copy and paste</strong>.</li>
+    <li>Zendesk only, and you just want Confluence content in search and AI answers: <strong>Zendesk's connector</strong>.</li>
+    <li>A real help center built from a Confluence space that keeps growing: <strong>a tree sync</strong>, such as KB Sync.</li>
+  </ul>
+  <p>Questions? Email <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a>. We're happy to look at your Confluence space and suggest the simplest setup, even if that isn't our app.</p>
+</main>
+<footer><div class="wrap">© 2026 F &amp; D Consulting · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:oneth@workwithfd.com">oneth@workwithfd.com</a></div></footer>
+</body>
+</html>

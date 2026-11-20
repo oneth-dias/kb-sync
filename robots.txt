@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://oneth-dias.github.io/kb-sync/sitemap.xml
